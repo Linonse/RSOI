@@ -6,7 +6,6 @@ from rest_framework import status
 from .models import Person
 from .serializers import PersonSerializer
 
-
 class PersonListView(APIView):
     def get(self, request):
         persons = Person.objects.all()

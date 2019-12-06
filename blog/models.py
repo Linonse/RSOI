@@ -6,5 +6,5 @@ class Person(models.Model):
     last_name = models.CharField(max_length=20)
 
     def __str__(self):
-        return "%s %s" % (self.first_name, self.last_name)
+        return self.first_name #"%s %s" % (self.first_name, self.last_name)
 # Create your models here.
