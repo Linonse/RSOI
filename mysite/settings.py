@@ -130,8 +130,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-
-try:
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
+'''try:
     import django_heroku
     django_heroku.settings(locals())
 except ImportError:
@@ -143,4 +145,4 @@ except ImportError:
 try:
     del DATABASES['default']['OPTIONS']['sslmode']
 except KeyError:
-    pass
+    pass'''
