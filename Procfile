@@ -1,1 +1,1 @@
-web: gunicorn YOURSITE.wsgi --log-level=info --log-file -
+web: python manage.py runserver 0.0.0.0:$PORT
